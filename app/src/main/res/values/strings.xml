@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MainProject</string>
+    <string name="title_activity_fragment_app">FragmentApp</string>
+    <string name="action_settings">Settings</string>
+</resources>
