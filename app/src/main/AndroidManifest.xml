@@ -20,6 +20,9 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".IntentApp_pg2" />
         <activity android:name=".Quiz" />
+        <activity android:name=".Counter" />
+        <activity android:name=".NewUser"
+            android:theme="@style/Theme.AppCompat.Light.Dialog.MinWidth"></activity>
     </application>
 
 </manifest>

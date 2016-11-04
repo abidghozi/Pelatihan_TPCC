@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main_app"
@@ -11,13 +12,36 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.gigabyte.mainproject.MainApp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome, "
+            android:textSize="30sp"
+            android:gravity="end"
+            android:paddingBottom="10dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="Guest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView10"
+            android:paddingBottom="10dp"
+            android:textSize="30sp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Main Page - Pelatihan Android"
-        android:textSize="24sp"
-        android:layout_gravity="center_horizontal"
-        android:paddingBottom="10dp"/>
+        app:srcCompat="@drawable/new_user_login"
+        android:id="@+id/imageView2" />
 
     <Button
         android:text="Intent App (Day 4)"
