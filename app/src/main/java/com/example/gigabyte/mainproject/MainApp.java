@@ -31,6 +31,7 @@ public class MainApp extends AppCompatActivity {
 
         DatabaseHandler db = new DatabaseHandler(this);
         System.out.println("USER : "+db.getUserCount());
+        System.out.println("DATA USER : "+db.show_First());
 
         //Intent Function
         button_app4.setOnClickListener(new View.OnClickListener() {
