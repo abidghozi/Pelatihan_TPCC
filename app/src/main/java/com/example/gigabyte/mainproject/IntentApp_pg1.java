@@ -39,7 +39,7 @@ public class IntentApp_pg1 extends AppCompatActivity {
     byte[] byteArray;
     private Bitmap selectedImage;
     private Spinner pilihan_jk;
-    private String jk_terpilih;
+    private String jk_terpilih, tgl_terpilih;
 
     public static Activity fa;
 
@@ -96,19 +96,22 @@ public class IntentApp_pg1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (selectedImage == null) {
-                    Toast.makeText(IntentApp_pg1.this, "Pilih Gambar Dahulu!!!", Toast.LENGTH_LONG).show();
-                } else {
+                    Toast.makeText(IntentApp_pg1.this, "Pilih Gambar Dahulu!", Toast.LENGTH_LONG).show();
+                }else if(tgl_terpilih.equalsIgnoreCase("dd/mm/yyyy")) {
+                    Toast.makeText(IntentApp_pg1.this, "Mohon Isi Tangal Lahir!", Toast.LENGTH_LONG).show();
+                }else{
                     Intent nex = new Intent(IntentApp_pg1.this, IntentApp_pg2.class);
 
                     String message = send.getText().toString();
                     nex.putExtra("nama", message);
                     nex.putExtra("jk",jk_terpilih);
+                    nex.putExtra("tgl",tgl_terpilih);
 
                     ByteArrayOutputStream bs = new ByteArrayOutputStream();
                     selectedImage.compress(Bitmap.CompressFormat.PNG, 90, bs);
                     nex.putExtra("byteArray", bs.toByteArray());
 
-                    //startActivity(nex);
+                    startActivity(nex);
                 }
             }
         });
@@ -136,6 +139,7 @@ public class IntentApp_pg1 extends AppCompatActivity {
         year = cal.get(Calendar.YEAR);
 
         tgl.setText("dd/mm/yyyy");
+        tgl_terpilih = "dd/mm/yyyy";
 
         tgl.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,6 +148,7 @@ public class IntentApp_pg1 extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int y, int m, int d) {
                         tgl.setText(d+"/"+m+"/"+y);
+                        tgl_terpilih = tgl.getText().toString();
                     }
                 };
                 DatePickerDialog dpDialog=new DatePickerDialog(IntentApp_pg1.this, a, year, month, day);

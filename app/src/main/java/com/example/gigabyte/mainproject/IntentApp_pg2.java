@@ -15,10 +15,9 @@ import java.nio.ByteBuffer;
 public class IntentApp_pg2 extends AppCompatActivity {
 
     private Button back, finish;
-    private TextView dtpesan, dtjk;
+    private TextView dtpesan, dtjk, dttgl;
     private Bundle bundle;
     private ImageView img_info;
-    private String[] jk = {"Laki-laki","Perempuan"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +29,12 @@ public class IntentApp_pg2 extends AppCompatActivity {
         dtpesan = (TextView) findViewById(R.id.textView4);
         img_info = (ImageView) findViewById(R.id.imageView4);
         dtjk = (TextView) findViewById(R.id.textView6);
+        dttgl = (TextView) findViewById(R.id.textView7);
 
         bundle = getIntent().getExtras();
         dtpesan.setText("Nama : "+bundle.getString("nama"));
         dtjk.setText(bundle.getString("jk"));
+        dttgl.setText(bundle.getString("tgl"));
 
         Bitmap b = BitmapFactory.decodeByteArray(
                 getIntent().getByteArrayExtra("byteArray"),0,getIntent().getByteArrayExtra("byteArray").length);

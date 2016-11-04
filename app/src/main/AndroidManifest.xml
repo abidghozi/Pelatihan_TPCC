@@ -20,10 +20,6 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".IntentApp_pg2" />
         <activity android:name=".Quiz" />
-        <activity
-            android:name=".FragmentApp"
-            android:label="@string/title_activity_fragment_app"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
